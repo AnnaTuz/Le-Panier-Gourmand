@@ -1,0 +1,58 @@
+include header.pug
+
+div(class='wrap')
+  div(class='content')
+    header(class='site-header')
+      include site_header_order.pug
+
+    div(class='container')
+      div(class='row')
+        div(class='col col-md-12')
+          h3(class="cart-header") Cart
+          div(id='cart-nav')
+        div(class='col col-md-12')
+          h3 Create order 
+        div(class='col col-md-6')
+          form#lite-shop-order(action="")
+                  div(class='form-control')
+                    label(for='username') Prénom Nom
+                    input(
+                        type='text',
+                        id='username',
+                        placeholder='Seules les lettres et le point (.), suivi d un espace, sont autorisés.',
+                        )
+                  div(class='form-control')
+                    label(for='phone') Numéro de téléphone
+                    input(
+                        type='text',
+                        id='phone',
+                        placeholder='+33 5 56 52 30 48',
+                        )
+                  div(class='form-control')
+                    label(for='email') E-mail
+                    input(
+                        type='text',
+                        id='email',
+                        placeholder='mail@example.com',
+                        )
+                  div(class='form-control')
+                    label(for='address') Adresse
+                    textarea(
+                        id='address',
+                        placeholder='Rue / NPA / Localité',
+                        )
+                  div(class='form-control')
+                    label(for='rule') 
+                      input(
+                          type='checkbox',
+                          id='rule',
+                          value='1'
+                          ) 
+                      span  J'accepte les conditions générales et la politique de confidentialité
+                  div(class='form-control text-right')
+                    button(class='button-primary', type='submit') Terminer la commande
+    //include nav.pug
+
+  include footer.pug
+  script(src='js/order.js')
+

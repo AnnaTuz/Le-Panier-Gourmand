@@ -1,0 +1,17 @@
+include header
+
+div(class='wrap')
+  div(class='content')
+    header(class='site-header')
+      include site_header
+
+    div(class='container')
+      div(class='row')
+        div(class='col col-md-12')
+          h2 #{cat[0]['category']}
+        div #{cat[0]['description']}
+        each val, index in goods
+          include cart.pug
+
+    include nav
+  include footer
